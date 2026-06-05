@@ -1,0 +1,286 @@
+:root {
+  --bg: #0f1419;
+  --surface: #1a2332;
+  --text: #f5f7fa;
+  --muted: #9aa5b5;
+  --accent: #5b9cff;
+  --accent-strong: #3d7fe6;
+  --success: #3ecf8e;
+  --danger: #ff6b6b;
+  --font-display: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-display);
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-header {
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.page-header p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.page-main {
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.status-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.status-dot.live {
+  background: var(--success);
+}
+
+.status-dot.error {
+  background: var(--danger);
+}
+
+/* Viewer */
+
+.viewer-pages {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.viewer-song-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted);
+}
+
+.viewer-page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.viewer-lines {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.viewer-line {
+  margin: 0.85rem 0;
+  font-size: clamp(1.35rem, 4.5vw, 2rem);
+  text-align: center;
+  white-space: pre-wrap;
+}
+
+.viewer-empty {
+  max-width: 32rem;
+  margin: 3rem auto;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Controller */
+
+.controller-panel {
+  max-width: 36rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.field select,
+.field input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.65rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 1rem;
+}
+
+.nav-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  border-radius: 0.65rem;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--accent-strong);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.btn-secondary:hover {
+  background: #243044;
+}
+
+.number-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+}
+
+.preview-box {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.preview-box h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.1rem;
+}
+
+.preview-line {
+  margin: 0.35rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.preview-page-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 0.75rem;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+.message {
+  padding: 0.85rem 1rem;
+  border-radius: 0.65rem;
+  background: rgba(255, 107, 107, 0.12);
+  color: #ffb4b4;
+  font-size: 0.95rem;
+}
+
+.message.hidden {
+  display: none;
+}
+
+/* QR page */
+
+.qr-wrap {
+  max-width: 28rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.qr-image {
+  width: min(100%, 18rem);
+  height: auto;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.75rem;
+}
+
+.qr-url {
+  word-break: break-all;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.link-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.link-list a {
+  display: block;
+  padding: 0.85rem 1rem;
+  border-radius: 0.65rem;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .page-main {
+    padding: 2rem;
+  }
+}

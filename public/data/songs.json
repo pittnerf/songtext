@@ -1,0 +1,675 @@
+{
+  "songs": [
+    {
+      "number": 1,
+      "title": "Várj míg",
+      "pages": [
+        "data/images/01/page-1.jpg"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Szerelem első",
+      "pages": [
+        "data/images/03/page-1.jpg",
+        "data/images/03/page-2.jpg"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Gyere velem",
+      "pages": [
+        "data/images/04/page-1.jpg"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Azért vannak a jó barátok",
+      "pages": [
+        "data/images/05/page-1.jpg"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Szép holnap",
+      "pages": [
+        "data/images/06/page-1.jpg"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Évszakok",
+      "pages": [
+        "data/images/07/page-1.jpg"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "Álomarcú lány",
+      "pages": [
+        "data/images/08/page-1.jpg"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Országút blues",
+      "pages": [
+        "data/images/09/page-1.jpg"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Éjjel érkezem",
+      "pages": [
+        "data/images/10/page-1.jpg"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Adj helyet",
+      "pages": [
+        "data/images/11/page-1.jpg"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Nehéz a dolga",
+      "pages": [
+        "data/images/12/page-1.jpg"
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Mielőtt elmegyek",
+      "pages": [
+        "data/images/13/page-1.jpg"
+      ]
+    },
+    {
+      "number": 14,
+      "title": "Gyertyák",
+      "pages": [
+        "data/images/14/page-1.jpg"
+      ]
+    },
+    {
+      "number": 15,
+      "title": "Itt vagyok",
+      "pages": [
+        "data/images/15/page-1.jpg",
+        "data/images/15/page-2.jpg"
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Elizabet",
+      "pages": [
+        "data/images/16/page-1.jpg"
+      ]
+    },
+    {
+      "number": 17,
+      "title": "Balatoni nyár",
+      "pages": [
+        "data/images/17/page-1.jpg"
+      ]
+    },
+    {
+      "number": 18,
+      "title": "A Dónáth úti orgonák",
+      "pages": [
+        "data/images/18/page-1.jpg"
+      ]
+    },
+    {
+      "number": 19,
+      "title": "Let it be",
+      "pages": [
+        "data/images/19/page-1.jpg"
+      ]
+    },
+    {
+      "number": 20,
+      "title": "That's what friends are for",
+      "pages": [
+        "data/images/20/page-1.jpg"
+      ]
+    },
+    {
+      "number": 21,
+      "title": "Ahol a lusta folyó",
+      "pages": [
+        "data/images/21/page-1.jpg"
+      ]
+    },
+    {
+      "number": 22,
+      "title": "Mondd miért szeretsz te mást",
+      "pages": [
+        "data/images/22/page-1.jpg"
+      ]
+    },
+    {
+      "number": 23,
+      "title": "Jégszív",
+      "pages": [
+        "data/images/23/page-1.jpg"
+      ]
+    },
+    {
+      "number": 24,
+      "title": "Ha egy napon hazamegyek",
+      "pages": [
+        "data/images/24/page-1.jpg"
+      ]
+    },
+    {
+      "number": 25,
+      "title": "Úgy szeretném meghálálni",
+      "pages": [
+        "data/images/25/page-1.jpg"
+      ]
+    },
+    {
+      "number": 26,
+      "title": "Kicsit szomorkás a hangulatom",
+      "pages": [
+        "data/images/26/page-1.jpg"
+      ]
+    },
+    {
+      "number": 27,
+      "title": "Próbálj meg lazítani",
+      "pages": [
+        "data/images/27/page-1.jpg"
+      ]
+    },
+    {
+      "number": 28,
+      "title": "Felmegyek hozzád",
+      "pages": [
+        "data/images/28/page-1.jpg"
+      ]
+    },
+    {
+      "number": 29,
+      "title": "Nem csak a húszéveseké a világ",
+      "pages": [
+        "data/images/29/page-1.jpg"
+      ]
+    },
+    {
+      "number": 30,
+      "title": "Jöjj vissza vándor",
+      "pages": [
+        "data/images/30/page-1.jpg"
+      ]
+    },
+    {
+      "number": 31,
+      "title": "Házibuli   Reality",
+      "pages": [
+        "data/images/31/page-1.jpg"
+      ]
+    },
+    {
+      "number": 32,
+      "title": "Nagy utazás",
+      "pages": [
+        "data/images/32/page-1.jpg"
+      ]
+    },
+    {
+      "number": 33,
+      "title": "A nagy ho ho ho horgász",
+      "pages": [
+        "data/images/33/page-1.jpg"
+      ]
+    },
+    {
+      "number": 34,
+      "title": "Hazafelé",
+      "pages": [
+        "data/images/34/page-1.jpg"
+      ]
+    },
+    {
+      "number": 35,
+      "title": "Maradj velem",
+      "pages": [
+        "data/images/35/page-1.jpg"
+      ]
+    },
+    {
+      "number": 36,
+      "title": "Apu mesélj",
+      "pages": [
+        "data/images/36/page-1.jpg",
+        "data/images/36/page-2.jpg"
+      ]
+    },
+    {
+      "number": 37,
+      "title": "L O V E",
+      "pages": [
+        "data/images/37/page-1.jpg"
+      ]
+    },
+    {
+      "number": 38,
+      "title": "New York, New York",
+      "pages": [
+        "data/images/38/page-1.jpg"
+      ]
+    },
+    {
+      "number": 39,
+      "title": "Vigyázz magadra, fiam",
+      "pages": [
+        "data/images/39/page-1.jpg"
+      ]
+    },
+    {
+      "number": 40,
+      "title": "Csavargódal",
+      "pages": [
+        "data/images/40/page-1.jpg"
+      ]
+    },
+    {
+      "number": 41,
+      "title": "Az utcán",
+      "pages": [
+        "data/images/41/page-1.jpg"
+      ]
+    },
+    {
+      "number": 42,
+      "title": "Mondd hogy nem haragszol rám",
+      "pages": [
+        "data/images/42/page-1.jpg"
+      ]
+    },
+    {
+      "number": 43,
+      "title": "Ciao Marina",
+      "pages": [
+        "data/images/43/page-1.jpg",
+        "data/images/43/page-2.jpg"
+      ]
+    },
+    {
+      "number": 44,
+      "title": "Gyere gyere Juli",
+      "pages": [
+        "data/images/44/page-1.jpg",
+        "data/images/44/page-2.jpg"
+      ]
+    },
+    {
+      "number": 45,
+      "title": "Így szólt hozzám a dédapám",
+      "pages": [
+        "data/images/45/page-1.jpg"
+      ]
+    },
+    {
+      "number": 46,
+      "title": "Iskolatáska",
+      "pages": [
+        "data/images/46/page-1.jpg"
+      ]
+    },
+    {
+      "number": 47,
+      "title": "Requiem",
+      "pages": [
+        "data/images/47/page-1.jpg"
+      ]
+    },
+    {
+      "number": 49,
+      "title": "Vén vagyok",
+      "pages": [
+        "data/images/49/page-1.jpg"
+      ]
+    },
+    {
+      "number": 50,
+      "title": "Csak egy kék színű virág",
+      "pages": [
+        "data/images/50/page-1.jpg",
+        "data/images/50/page-2.jpg"
+      ]
+    },
+    {
+      "number": 51,
+      "title": "Múlnak a gyermekévek",
+      "pages": [
+        "data/images/51/page-1.jpg"
+      ]
+    },
+    {
+      "number": 52,
+      "title": "Kell hogy várj",
+      "pages": [
+        "data/images/52/page-1.jpg"
+      ]
+    },
+    {
+      "number": 53,
+      "title": "Levél a távolból",
+      "pages": [
+        "data/images/53/page-1.jpg",
+        "data/images/53/page-2.jpg"
+      ]
+    },
+    {
+      "number": 54,
+      "title": "Lökd ide a sört",
+      "pages": [
+        "data/images/54/page-1.jpg",
+        "data/images/54/page-2.jpg"
+      ]
+    },
+    {
+      "number": 55,
+      "title": "Álmodtam egy világot",
+      "pages": [
+        "data/images/55/page-1.jpg"
+      ]
+    },
+    {
+      "number": 56,
+      "title": "Szóljon hangosan az ének",
+      "pages": [
+        "data/images/56/page-1.jpg"
+      ]
+    },
+    {
+      "number": 57,
+      "title": "Próbálj meg lazítani",
+      "pages": [
+        "data/images/57/page-1.jpg",
+        "data/images/57/page-2.jpg"
+      ]
+    },
+    {
+      "number": 58,
+      "title": "Ne szeress engem",
+      "pages": [
+        "data/images/58/page-1.jpg",
+        "data/images/58/page-2.jpg"
+      ]
+    },
+    {
+      "number": 59,
+      "title": "Eladó kiadó most a szívem",
+      "pages": [
+        "data/images/59/page-1.jpg",
+        "data/images/59/page-2.jpg"
+      ]
+    },
+    {
+      "number": 60,
+      "title": "Nem tudok élni nélküled",
+      "pages": [
+        "data/images/60/page-1.jpg"
+      ]
+    },
+    {
+      "number": 61,
+      "title": "Nehéz a boldogságtól",
+      "pages": [
+        "data/images/61/page-1.jpg",
+        "data/images/61/page-2.jpg"
+      ]
+    },
+    {
+      "number": 62,
+      "title": "Rúg a rigó verje debla",
+      "pages": [
+        "data/images/62/page-1.jpg"
+      ]
+    },
+    {
+      "number": 63,
+      "title": "Mi kéne még D",
+      "pages": [
+        "data/images/63/page-1.jpg"
+      ]
+    },
+    {
+      "number": 64,
+      "title": "Hosszú még az út",
+      "pages": [
+        "data/images/64/page-1.jpg"
+      ]
+    },
+    {
+      "number": 65,
+      "title": "Valaki mondja meg",
+      "pages": [
+        "data/images/65/page-1.jpg",
+        "data/images/65/page-2.jpg"
+      ]
+    },
+    {
+      "number": 66,
+      "title": "Érzés",
+      "pages": [
+        "data/images/66/page-1.jpg"
+      ]
+    },
+    {
+      "number": 67,
+      "title": "Mama kérlek",
+      "pages": [
+        "data/images/67/page-1.jpg"
+      ]
+    },
+    {
+      "number": 68,
+      "title": "Minden asszony életében",
+      "pages": [
+        "data/images/68/page-1.jpg"
+      ]
+    },
+    {
+      "number": 69,
+      "title": "Szeretlek én (Besame Mucho)",
+      "pages": [
+        "data/images/69/page-1.jpg"
+      ]
+    },
+    {
+      "number": 70,
+      "title": "Ne hagyd el soha (El choclo)",
+      "pages": [
+        "data/images/70/page-1.jpg"
+      ]
+    },
+    {
+      "number": 71,
+      "title": "Találkozás egy régi szerelemmel",
+      "pages": [
+        "data/images/71/page-1.jpg"
+      ]
+    },
+    {
+      "number": 72,
+      "title": "Hűtlen",
+      "pages": [
+        "data/images/72/page-1.jpg"
+      ]
+    },
+    {
+      "number": 73,
+      "title": "Sej haj rozi",
+      "pages": [
+        "data/images/73/page-1.jpg"
+      ]
+    },
+    {
+      "number": 74,
+      "title": "Akácos út",
+      "pages": [
+        "data/images/74/page-1.jpg"
+      ]
+    },
+    {
+      "number": 75,
+      "title": "Régi csibeszek",
+      "pages": [
+        "data/images/75/page-1.jpg"
+      ]
+    },
+    {
+      "number": 76,
+      "title": "Gyöngyhajú lány",
+      "pages": [
+        "data/images/76/page-1.jpg"
+      ]
+    },
+    {
+      "number": 77,
+      "title": "Szerelem első vérig",
+      "pages": [
+        "data/images/77/page-1.jpg"
+      ]
+    },
+    {
+      "number": 78,
+      "title": "Kevés voltam neked",
+      "pages": [
+        "data/images/78/page-1.jpg"
+      ]
+    },
+    {
+      "number": 79,
+      "title": "Az első villamos",
+      "pages": [
+        "data/images/79/page-1.jpg"
+      ]
+    },
+    {
+      "number": 80,
+      "title": "Nehéz az Olga",
+      "pages": [
+        "data/images/80/page-1.jpg"
+      ]
+    },
+    {
+      "number": 81,
+      "title": "Szól a rádió",
+      "pages": [
+        "data/images/81/page-1.jpg",
+        "data/images/81/page-2.jpg"
+      ]
+    },
+    {
+      "number": 82,
+      "title": "Yesterday",
+      "pages": [
+        "data/images/82/page-1.jpg"
+      ]
+    },
+    {
+      "number": 83,
+      "title": "Hey Jude",
+      "pages": [
+        "data/images/83/page-1.jpg"
+      ]
+    },
+    {
+      "number": 84,
+      "title": "All my loving",
+      "pages": [
+        "data/images/84/page-1.jpg"
+      ]
+    },
+    {
+      "number": 85,
+      "title": "Money money money",
+      "pages": [
+        "data/images/85/page-1.jpg"
+      ]
+    },
+    {
+      "number": 86,
+      "title": "Thank you for the music",
+      "pages": [
+        "data/images/86/page-1.jpg",
+        "data/images/86/page-2.jpg"
+      ]
+    },
+    {
+      "number": 87,
+      "title": "Happy new year",
+      "pages": [
+        "data/images/87/page-1.jpg",
+        "data/images/87/page-2.jpg"
+      ]
+    },
+    {
+      "number": 88,
+      "title": "Vidéki sanzon",
+      "pages": [
+        "data/images/88/page-1.jpg"
+      ]
+    },
+    {
+      "number": 89,
+      "title": "Homokvár",
+      "pages": [
+        "data/images/89/page-1.jpg",
+        "data/images/89/page-2.jpg"
+      ]
+    },
+    {
+      "number": 90,
+      "title": "Valahol egy lány",
+      "pages": [
+        "data/images/90/page-1.jpg"
+      ]
+    },
+    {
+      "number": 91,
+      "title": "A szerelem él",
+      "pages": [
+        "data/images/91/page-1.jpg",
+        "data/images/91/page-2.jpg"
+      ]
+    },
+    {
+      "number": 92,
+      "title": "Én leszek",
+      "pages": [
+        "data/images/92/page-1.jpg",
+        "data/images/92/page-2.jpg"
+      ]
+    },
+    {
+      "number": 93,
+      "title": "Árva fiú",
+      "pages": [
+        "data/images/93/page-1.jpg"
+      ]
+    },
+    {
+      "number": 94,
+      "title": "Különös szilveszter",
+      "pages": [
+        "data/images/94/page-1.jpg"
+      ]
+    },
+    {
+      "number": 95,
+      "title": "Okosabban kéne élni",
+      "pages": [
+        "data/images/95/page-1.jpg",
+        "data/images/95/page-2.jpg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Song Controller</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page controller-page">
+    <header class="page-header">
+      <h1>Song controller</h1>
+      <p>Select the song the audience should see on their phones.</p>
+    </header>
+
+    <main class="page-main">
+      <div id="error-message" class="message hidden"></div>
+
+      <section class="controller-panel">
+        <div class="field">
+          <label for="song-select">Song title (A–Z)</label>
+          <select id="song-select"></select>
+        </div>
+
+        <div class="nav-row">
+          <button type="button" class="btn btn-secondary" id="prev-btn">← Previous</button>
+          <button type="button" class="btn btn-secondary" id="next-btn">Next →</button>
+        </div>
+
+        <div class="field">
+          <label for="song-number">Song number</label>
+          <div class="number-row">
+            <input id="song-number" type="number" min="1" inputmode="numeric" placeholder="e.g. 12" />
+            <button type="button" class="btn" id="select-number-btn">Select</button>
+          </div>
+        </div>
+
+        <div class="preview-box">
+          <h2 id="preview-title">No song selected</h2>
+          <div id="preview-lines"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js"></script>
+    <script src="js/sync.js"></script>
+    <script src="js/songs.js"></script>
+    <script src="js/controller.js"></script>
+  </body>
+</html>

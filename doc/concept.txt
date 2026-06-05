@@ -1,0 +1,11 @@
+I want to implement an application that will help the audience track the texts of the songs during a concert, so they can sing with us.
+The app and files have to be shared on a free hosting platform, I don't want to pay for this since it is a small thing.
+The app has the following components:
+- A browser based viewer of the current song's text. It reads the  content from the same URL. It checks every second if the content has been changed
+and it refreshes automatically if it has changed in the background because the new song's text must be displayed
+- An application that is also browser based and will help select the current song, so the need the content for the first app will change.
+For selection it has a combo box with all the song's titles in alphabetic order but there are arrows to move to the prev or next song, or the user can type in the song's number  and press a button to select the desired song
+- I need a QR code that can be read by the mobile devices and will open up the page described in the first point. I assume this can be generated only if the page has been published already.
+
+The current format of the songs' texts is PDF, see the "songs_pdf" folder.
+

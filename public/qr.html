@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audience QR Code</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="page qr-page">
+    <header class="page-header">
+      <h1>Audience QR code</h1>
+      <p>Scan this code to open the live lyrics page on a phone.</p>
+    </header>
+
+    <main class="page-main">
+      <div class="qr-wrap">
+        <img
+          id="qr-image"
+          class="qr-image"
+          alt="QR code linking to the lyrics viewer"
+        />
+        <p class="qr-url" id="viewer-url"></p>
+        <p class="qr-url">Generate this page after publishing the site so the QR points to the live URL.</p>
+      </div>
+
+      <nav class="link-list">
+        <a href="viewer.html">Open viewer</a>
+        <a href="controller.html">Open controller</a>
+      </nav>
+    </main>
+
+    <script>
+      (function () {
+        const viewerUrl = new URL("viewer.html", window.location.href).href;
+        const qrApi = "https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=";
+
+        document.getElementById("viewer-url").textContent = viewerUrl;
+        document.getElementById("qr-image").src = qrApi + encodeURIComponent(viewerUrl);
+      })();
+    </script>
+  </body>
+</html>
