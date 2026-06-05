@@ -75,7 +75,7 @@
       if (typeof number === "number") {
         await applySongNumber(number);
       } else {
-        setStatus("", "Waiting for the current song");
+        setStatus("", "Várakozás a következő dalra");
       }
     } catch (err) {
       setStatus("error", err.message || "Sync error");
@@ -95,7 +95,7 @@
       await pollCurrentSong();
 
       pollTimer = window.setInterval(pollCurrentSong, config.pollIntervalMs);
-      setStatus("live", `Checking every ${config.pollIntervalMs / 1000}s`);
+      // setStatus("live", `Checking every ${config.pollIntervalMs / 1000}s`);
     } catch (err) {
       setStatus("error", err.message || "Failed to start viewer");
       contentEl.className = "viewer-empty";
