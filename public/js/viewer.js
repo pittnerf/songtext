@@ -3,17 +3,31 @@
 
   const config = window.SONGTEXT_CONFIG;
   const contentEl = document.getElementById("song-content");
+  const pageTitleEl = document.getElementById("page-title");
+  const statusBarEl = document.querySelector(".status-bar");
   const statusDot = document.getElementById("status-dot");
   const syncStatus = document.getElementById("sync-status");
   const statusText = document.getElementById("status-text");
+
+  const BASE_TITLE = "Most ezt énekeljük";
 
   let songs = [];
   let currentNumber = null;
   let pollTimer = null;
 
   function setStatus(kind, message) {
+    statusBarEl.classList.remove("hidden");
+    statusText.classList.remove("hidden");
     statusDot.className = "status-dot" + (kind ? " " + kind : "");
     syncStatus.textContent = message;
+  }
+
+  function clearStatus() {
+    statusBarEl.classList.add("hidden");
+    statusDot.className = "status-dot";
+    syncStatus.textContent = "";
+    statusText.textContent = "";
+    statusText.classList.add("hidden");
   }
 
   function escapeHtml(value) {
@@ -24,33 +38,46 @@
       .replace(/"/g, "&quot;");
   }
 
+  function setPageTitle(song) {
+    if (song) {
+      pageTitleEl.textContent = `${BASE_TITLE} — Dal: ${song.number}: ${song.title}`;
+    } else {
+      pageTitleEl.textContent = BASE_TITLE;
+    }
+  }
+
   function renderSong(song) {
     if (!song) {
+      setPageTitle(null);
       contentEl.className = "viewer-empty";
       contentEl.innerHTML = "<p>Waiting for the operator to select a song…</p>";
       statusText.textContent = "No song selected yet";
+      statusText.classList.remove("hidden");
+      setStatus("", "Waiting for the current song");
       return;
     }
-
-    statusText.textContent = `Dal: ${song.number}: ${song.title}`;
 
     if (!song.pages || !song.pages.length) {
+      setPageTitle(song);
       contentEl.className = "viewer-empty";
       contentEl.innerHTML = "<p>This song has no page images. Re-run build_songs.py.</p>";
+      setStatus("error", "Missing song images");
+      statusText.textContent = `${song.number}. ${song.title}`;
+      statusText.classList.remove("hidden");
       return;
     }
 
+    setPageTitle(song);
+    clearStatus();
     contentEl.className = "viewer-pages";
-    contentEl.innerHTML =
-      `<h2 class="viewer-song-title">${escapeHtml(song.title)}</h2>` +
-      song.pages
-        .map(
-          (page, index) =>
-            `<img class="viewer-page-image" src="${escapeHtml(page)}" alt="${escapeHtml(
-              song.title
-            )} — page ${index + 1}" loading="eager" />`
-        )
-        .join("");
+    contentEl.innerHTML = song.pages
+      .map(
+        (page, index) =>
+          `<img class="viewer-page-image" src="${escapeHtml(page)}" alt="${escapeHtml(
+            song.title
+          )} — page ${index + 1}" loading="eager" />`
+      )
+      .join("");
   }
 
   async function applySongNumber(number) {
@@ -66,7 +93,6 @@
 
     currentNumber = number;
     renderSong(song);
-    // setStatus("live", `Live · song ${song.number}`);
   }
 
   async function pollCurrentSong() {
@@ -75,7 +101,8 @@
       if (typeof number === "number") {
         await applySongNumber(number);
       } else {
-        setStatus("", "Várakozás a következő dalra");
+        currentNumber = null;
+        renderSong(null);
       }
     } catch (err) {
       setStatus("error", err.message || "Sync error");
@@ -95,7 +122,6 @@
       await pollCurrentSong();
 
       pollTimer = window.setInterval(pollCurrentSong, config.pollIntervalMs);
-      // setStatus("live", `Checking every ${config.pollIntervalMs / 1000}s`);
     } catch (err) {
       setStatus("error", err.message || "Failed to start viewer");
       contentEl.className = "viewer-empty";
