@@ -32,7 +32,7 @@
       return;
     }
 
-    statusText.textContent = `Song ${song.number}: ${song.title}`;
+    statusText.textContent = `Dal: ${song.number}: ${song.title}`;
 
     if (!song.pages || !song.pages.length) {
       contentEl.className = "viewer-empty";
@@ -66,7 +66,7 @@
 
     currentNumber = number;
     renderSong(song);
-    setStatus("live", `Live · song ${song.number}`);
+    // setStatus("live", `Live · song ${song.number}`);
   }
 
   async function pollCurrentSong() {

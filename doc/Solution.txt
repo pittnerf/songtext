@@ -1,0 +1,74 @@
+Set up Firebase (free):
+
+Create a project at console.firebase.google.com
+Enable Realtime Database
+Copy the web app config into 9_songtext/public/js/config.js
+Test locally (server is running on port 8765):
+
+http://localhost:8765/controller.html
+http://localhost:8765/viewer.html
+Deploy the contents of 9_songtext/public/ to GitHub Pages, then open qr.html on the live URL.
+
+Full setup details, Firebase rules, and a concert-day checklist are in 9_songtext/README.md.
+
+Note: The songs_pdf/ folder is empty right now, so the app uses 3 sample songs. Once you drop in your PDFs and run the build script, those will replace the samples.
+
+If you want, I can walk you through Firebase setup step by step or help you deploy to GitHub Pa
+
+
+Try it
+Refresh your local server tabs (hard refresh if needed):
+
+http://localhost:8080/viewer.html — select song 91 and the layout should match the PDF
+http://localhost:8080/controller.html — preview shows the sheet image too
+If you re-run the build later:
+
+python3 9_songtext/scripts/build_songs.py
+Optional tuning:
+
+Text too small on phones: --scale 2.5
+Deploy size too large: --jpeg-quality 80
+Example:
+
+python3 9_songtext/scripts/build_songs.py --scale 2.5 --jpeg-quality 85
+
+python3 9_songtext/serve.py
+
+
+1. Enable GitHub Pages
+On GitHub → songtext → Settings → Pages:
+
+Build and deployment → Source: GitHub Actions
+2. Check the deploy workflow
+Go to Actions → Deploy to GitHub Pages — it should run automatically from your push. Wait until it shows green.
+
+3. Your live URLs
+Once deployed:
+
+Page	URL
+Audience (QR target)
+https://pittnerf.github.io/songtext/viewer.html
+Operator controller
+https://pittnerf.github.io/songtext/controller.html
+QR code
+https://pittnerf.github.io/songtext/qr.html
+4. Firebase (one-time)
+In Firebase Console → Authentication → Settings → Authorized domains, add:
+
+pittnerf.github.io
+5. Concert day
+Open controller.html on your phone/laptop and select the current song
+Open qr.html and show/print the QR code for the audience
+Audience scans → viewer.html updates automatically
+
+
+
+Once deployed:
+
+Page	URL
+Audience (QR target)
+https://pittnerf.github.io/songtext/viewer.html
+Operator controller
+https://pittnerf.github.io/songtext/controller.html
+QR code
+https://pittnerf.github.io/songtext/qr.html
