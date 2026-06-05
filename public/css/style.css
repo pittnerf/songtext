@@ -71,7 +71,18 @@ a {
 }
 
 .status-bar.hidden {
-  display: none;
+  display: none !important;
+}
+
+.viewer-page.song-active .status-bar {
+  display: none !important;
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.viewer-page.song-active .page-main {
+  padding-top: 0.75rem;
 }
 
 .page-header p.hidden {
