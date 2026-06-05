@@ -117,6 +117,14 @@
 
   async function start() {
     try {
+      const viewerUrl = new URL("viewer.html", window.location.href).href;
+      const qrImage = document.getElementById("viewer-qr");
+      if (qrImage) {
+        qrImage.src =
+          "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" +
+          encodeURIComponent(viewerUrl);
+      }
+
       songs = await window.SongtextSongs.loadCatalogue();
       if (!window.SongtextSync.isConfigured()) {
         setStatus("error", "Firebase is not configured — edit public/js/config.js");

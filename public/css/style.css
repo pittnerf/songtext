@@ -121,6 +121,30 @@ a {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+.viewer-qr-footer {
+  max-width: 48rem;
+  margin: 1.5rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.viewer-qr-label {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.viewer-qr-image {
+  display: block;
+  width: min(100%, 9rem);
+  height: auto;
+  margin: 0 auto;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 0.5rem;
+}
+
 .viewer-lines {
   max-width: 42rem;
   margin: 0 auto;
