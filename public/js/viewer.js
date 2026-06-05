@@ -16,14 +16,18 @@
   let pollTimer = null;
 
   function setStatus(kind, message) {
+    document.body.classList.remove("song-active");
     statusBarEl.classList.remove("hidden");
+    statusBarEl.hidden = false;
     statusText.classList.remove("hidden");
     statusDot.className = "status-dot" + (kind ? " " + kind : "");
     syncStatus.textContent = message;
   }
 
   function clearStatus() {
+    document.body.classList.add("song-active");
     statusBarEl.classList.add("hidden");
+    statusBarEl.hidden = true;
     statusDot.className = "status-dot";
     syncStatus.textContent = "";
     statusText.textContent = "";
@@ -40,7 +44,7 @@
 
   function setPageTitle(song) {
     if (song) {
-      pageTitleEl.textContent = `${BASE_TITLE} — Dal: ${song.number}: ${song.title}`;
+      pageTitleEl.textContent = `${BASE_TITLE} — Dal: ${song.title}`;
     } else {
       pageTitleEl.textContent = BASE_TITLE;
     }
@@ -48,6 +52,7 @@
 
   function renderSong(song) {
     if (!song) {
+      document.body.classList.remove("song-active");
       setPageTitle(null);
       contentEl.className = "viewer-empty";
       contentEl.innerHTML = "<p>Waiting for the operator to select a song…</p>";
@@ -58,6 +63,7 @@
     }
 
     if (!song.pages || !song.pages.length) {
+      document.body.classList.remove("song-active");
       setPageTitle(song);
       contentEl.className = "viewer-empty";
       contentEl.innerHTML = "<p>This song has no page images. Re-run build_songs.py.</p>";

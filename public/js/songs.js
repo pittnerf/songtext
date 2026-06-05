@@ -15,9 +15,7 @@
     }
 
     const data = await response.json();
-    catalogue = data.songs
-      .slice()
-      .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" }));
+    catalogue = data.songs.slice().sort((a, b) => a.number - b.number);
 
     return catalogue;
   }

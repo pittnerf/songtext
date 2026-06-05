@@ -20,10 +20,8 @@ DEFAULT_IMAGES_DIR = ROOT / "public" / "data" / "images"
 
 
 def title_from_filename(path: Path) -> str:
-    name = path.stem
-    name = re.sub(r"^\d+[\-_.\s]+", "", name)
-    name = name.replace("_", " ").replace("-", " ").strip()
-    return name or path.stem
+    name = path.stem.replace("_", " ").replace("-", " ")
+    return " ".join(name.split())
 
 
 def number_from_filename(path: Path) -> int | None:

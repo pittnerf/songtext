@@ -31,7 +31,7 @@
       return;
     }
 
-    previewTitle.textContent = `${song.number}. ${song.title}`;
+    previewTitle.textContent = song.title;
     if (song.pages && song.pages.length) {
       previewLines.innerHTML = song.pages
         .map(
