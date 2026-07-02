@@ -26,6 +26,12 @@ window.SONGTEXT_CONFIG = {
     appId: "1:349870690839:web:1829460eaca958d5ff4252",
   },
 
-  // Key under which the current song number is stored in Firebase
+  // Key under which the current display is stored in Firebase.
+  // Value is either a song number (number) or an external lyrics URL (string).
   statePath: "songtext/currentSongNumber",
+
+  // How external URLs open on the viewer:
+  // - "open": stay on viewer; tap opens lyrics in a new tab (keeps sync with controller)
+  // - "iframe": embed in the viewer (only if the site allows framing)
+  externalUrlMode: "open",
 };

@@ -164,6 +164,47 @@ a {
   color: var(--muted);
 }
 
+.viewer-external {
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.viewer-iframe {
+  display: block;
+  width: 100%;
+  height: min(75vh, 900px);
+  min-height: 20rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.viewer-external-fallback {
+  margin-top: 0.75rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.viewer-external-redirect {
+  max-width: 28rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.viewer-redirect-message {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.1rem, 4vw, 1.35rem);
+}
+
+.viewer-redirect-btn {
+  display: inline-flex;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
 /* Controller */
 
 .controller-panel {
@@ -223,6 +264,11 @@ a {
   cursor: not-allowed;
 }
 
+.btn.hidden,
+.hidden {
+  display: none !important;
+}
+
 .btn-secondary {
   background: var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -232,10 +278,17 @@ a {
   background: #243044;
 }
 
-.number-row {
+.number-row,
+.url-row {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 0.75rem;
+}
+
+.field-hint {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
 }
 
 .preview-box {

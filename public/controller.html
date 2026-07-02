@@ -34,6 +34,22 @@
           </div>
         </div>
 
+        <div class="field">
+          <label for="external-url">Web page (no PDF)</label>
+          <div class="url-row">
+            <input
+              id="external-url"
+              type="url"
+              inputmode="url"
+              placeholder="https://example.com/song-lyrics"
+            />
+            <button type="button" class="btn" id="show-url-btn">Show URL</button>
+          </div>
+          <p class="field-hint">
+            Opens lyrics in a second tab; that tab closes automatically when you pick a PDF song.
+          </p>
+        </div>
+
         <div class="preview-box">
           <h2 id="preview-title">No song selected</h2>
           <div id="preview-lines"></div>
