@@ -1,0 +1,86 @@
+# Song performance order → DOCX file mapping
+# Source: doc/listOfSongs.txt (column 1 = order, column 2 = title)
+# DOCX folder: docx/
+# Format: ORDER<TAB>LIST_TITLE<TAB>DOCX_FILENAME
+
+1	Örökké tart - bébi figyelek rád...	01 Örökké tart - Tankcsapda.docx
+2	Szerelem első vérig	02 Szerelem első vérig (C).docx
+3	Utcabálról jött a hír	03 Utcabál - Hungária (C).docx
+4	Ha majd nem leszek melleted én	04 Ha majd nem leszek melletted én - Zámbó Jimmy (D).docx
+5	Ha még egyszer láthatnám	05 Ha még egyszer láthatnám.docx
+6	I love you baby	06 I Love You Baby - Cserháti (A).docx
+7	Öreg vagyok már hogy összetörj	07 Öreg vagyok már, hogy összetörj - Balázs Fecó (A).docx
+8	Születésnapodra	08 Születésnapodra - LGT.docx
+9	20 év múlva	09 Húsz év múlva - Komár László (G).docx
+10	Micsoda buli	10 Micsoda buli - Hungária.docx
+11	Elmegyek	11 Elmegyek - Máté Péter (Cm).docx
+12	Made in Hungaria	12 Made in Hungária - Fenyő Miklós (C).docx
+13	Te ott állsz az út végén	13 Ott állsz az út végén - Máté Péter.docx
+14	Szállj fel magasra	14 Szállj fel magasra - Piramis (F).docx
+15	Ajándék	15 Ajándék - Piramis.docx
+16	Neked írom a dalt	16 Neked írom a dalt - Presser Gábor.docx
+17	Európa	17 Európa - Varga Miklós (Dm).docx
+18	Szeretlek is meg nem is	18 Szeretlek is, meg nem is - R-GO (G).docx
+19	Hiányzol	19 Hiányzol - Demjén Ferenc.docx
+20	MA-MA-MA	20 Mamma Maria  - Korda.docx
+21	Egy kis virág	21 Kisvirág - Neoton.docx
+22	A szabadság vándorai	22 A szabadság vándorai - Demjén.docx
+23	Szép nyári nap (Vándorének)	23 Szép nyári nap - Neoton.docx
+24	Lady N	24 Lady N - Korda (A).docx
+25	Bolond aki sir	25 Bolond aki sír - TNT.docx
+26	Megegyszer	26 Mégegyszer - Club54.docx
+27	Ha egy napon	27 Ha egy napon hazamegyek.docx
+28	Vigyázz magadra, fiam!	28 Vigyázz magadra, fiam (F).docx
+29	Csavargódal (még nem tudom ...)	29 Csavargódal.docx
+30	Az utcán / Néha furcsa hangulatban	30 Az utcán (F).docx
+31	Levél a távolból (Távolból írok kedvesem )	31 Levél a távolból.docx
+32	Utazás	32 Utazás - fonográf.docx
+33	Vár míg felkel majd a nap	33 Várj míg (C).docx
+34	Éjjel erkezem	34 Éjjel érkezem.docx
+35	Adj helyet magad mellett	35 Adj helyet (Gm).docx
+36	Mielőtt elmegyek	36 Mielőtt elmegyek.docx
+37	Gyertyák	37 Gyertyák (G).docx
+38	Jégszív	38 Jégszív.docx
+39	Jöjj vissza vándor	39 Jöjj vissza vándor.docx
+40	Requiem	40 Requiem - Karthago (Cm).docx
+41	Álmodtam egy világot	41 Álmodtam egy világot.docx
+42	Hűtlen	42 Hűtlen.docx
+43	Napot hoztam csillagot	43 Napot hoztam, csillagot - Omega (C).docx
+44	Kergesd el a felhőt a házamról	44 Kergesd el a felhőt a házamról - Korál.docx
+45	Felmegyek hozzád	45 Felmegyek hozzád.docx
+46	Nem csak a húszéveseké a világ	46 Nem csak a húszéveseké a világ.docx
+47	Ciao Marina	47 Ciao Marina (F).docx
+48	Gyere Juli	48 Gyere-gyere Juli (C).docx
+49	Próbálj meg lazítani!	49 Próbálj meg lazítani (C).docx
+50	Ne hagyd el soha (El choclo)	50 Ne hagyd el soha (El choclo) (C).docx
+51	Régi csibeszek	51 Régi csibeszek (F).docx
+52	Vidéki sanzon	52 Vidéki sanzon.docx
+53	Homokvár	53 Homokvár (C).docx
+54	Valahol egy lány	54 Valahol egy lány.docx
+55	Okosabban kéne élni	55 Okosabban kéne élni.docx
+56	Skandináv éjszakák	56 Skandináv éjszakák - Charlie.docx
+57	Santa Maria	57 Santa Maria - Neoton.docx
+58	Csavard fel a szőnyeget	58 Csavard fel a szőnyeget - Hungária (C).docx
+59	Nika se perimeno	59 Nika Se Perimeno - Delhusa Gjon.docx
+60	Nincs szerencsém  a szerelemben	60 Nincs szerencsém - Apostol (F).docx
+61	A dal még most is a régi	61 A dal még most is a régi Prognózis.docx
+62	YMCA	62 YMCA - Village people (A).docx
+63	Azért vannak a jó barátok	63 Azért vannak a jó barátok - Máté Péter (F).docx
+64	Évszakok	64 Évszakok (Cm).docx
+65	Kicsit szomorkás a hangulatom	65 Kicsit szomorkás a hangulatom.docx
+66	Nagy utazás	66 Nagy utazás.docx
+67	Dédapám	67 Így szólt hozzám a dédapám.docx
+68	Múlnak a gyermekévek	68 Múlnak a gyermekévek.docx
+69	Lökd ide a sört	69 Lökd ide a sört.docx
+70	Nem tudok élni nélküled	70 Nem tudok élni nélküled.docx
+71	Nehéz a boldogságtól	71 Nehéz a boldogságtól (Cm).docx
+72	Kevés voltam neked	72 Kevés voltam neked.docx
+73	Szól a rádió	73 Szól a rádió.docx
+74	Vannak kivételek	74 Vannak kivételek - Neoton (F).docx
+75	Holnap hajnalig	75 Holnap hajnalig - Neoton.docx
+76	Most múlik pontosan	76 Most múlik pontosan - Quimby.docx
+77	Nekem így is jó	77 Így is jó - Zorán.docx
+78	Mikor elindul a vonat	78 Mikor elindul a vonat   Demjén.docx
+79	Ha újra kezdeném	79 Ha újra kezdeném - P mobil.docx
+80	Te és Én	80 Te és én - Ihász Gábor.docx
+81	Maradj velem!	81 Maradj velem (Cm).docx
