@@ -9,33 +9,33 @@
   const syncStatus = document.getElementById("sync-status");
   const statusText = document.getElementById("status-text");
 
-  const hu = {
-    baseTitle: "Most ezt énekeljük",
-    songLabel: (title) => `Most ezt énekeljük — Dal: ${title}`,
-    webTitle: "Most ezt énekeljük — Web",
-    connecting: "Kapcsolódás…",
-    waitingForSong: "Várakozás a dal kiválasztására",
-    waitingForOperator: "Várakozás, amíg a kezelő kiválaszt egy dalt…",
-    noSongSelected: "Még nincs dal kiválasztva",
-    noPageImages: "Ehhez a dalhoz nem érhető el szöveg.",
-    missingSongImages: "Hiányzó dal képek",
-    pageAlt: (title, pageNumber) => `${title} — ${pageNumber}. oldal`,
-    songNotInCatalogue: (number) => `A(z) ${number}. számú dal nem szerepel a listában`,
-    syncError: "Szinkronizálási hiba",
-    firebaseNotConfigured: "A Firebase nincs beállítva — szerkeszd a public/js/config.js fájlt",
-    setupRequired: "Beállítás szükséges",
-    failedToStartViewer: "A megjelenítő indítása sikertelen",
-    failedToStart: "Indítás sikertelen",
-    iframeTitle: "Dalszöveg",
-    iframeNotShowing: "Nem jelenik meg az oldal?",
-    openInBrowser: "Megnyitás böngészőben",
-    externalWebsite: "A dalszöveg egy külső weboldalon van.",
-    openLyrics: "Dalszöveg megnyitása",
-    openingLyricsTab: "Dalszöveg megnyitása másik lapon…",
+  const copy = {
+    baseTitle: "Now singing",
+    songLabel: (title) => `Now singing — ${title}`,
+    webTitle: "Now singing — Web",
+    connecting: "Connecting…",
+    waitingForSong: "Waiting for a song to be selected",
+    waitingForOperator: "Waiting for the operator to select a song…",
+    noSongSelected: "No song selected yet",
+    noPageImages: "No lyrics are available for this song.",
+    missingSongImages: "Missing song images",
+    pageAlt: (title, pageNumber) => `${title} — page ${pageNumber}`,
+    songNotInCatalogue: (number) => `Song number ${number} is not in the catalogue`,
+    syncError: "Sync error",
+    firebaseNotConfigured: "Firebase is not configured — edit public/js/config.js",
+    setupRequired: "Setup required",
+    failedToStartViewer: "Failed to start the viewer",
+    failedToStart: "Failed to start",
+    iframeTitle: "Lyrics",
+    iframeNotShowing: "Page not showing?",
+    openInBrowser: "Open in browser",
+    externalWebsite: "The lyrics are on an external website.",
+    openLyrics: "Open lyrics",
+    openingLyricsTab: "Opening lyrics in another tab…",
     lyricsTabOpen:
-      "A dalszöveg megnyílt egy másik lapon. PDF dal választásakor automatikusan bezáródik.",
+      "Lyrics opened in another tab. It will close automatically when a PDF song is selected.",
     allowPopups:
-      "Engedélyezd a felugró ablakokat, hogy a dalszöveg automatikusan megnyílhasson, vagy érintsd meg az alábbi gombot.",
+      "Allow pop-ups so lyrics can open automatically, or tap the button below.",
   };
 
   const LYRICS_WINDOW_NAME = "songtext_lyrics";
@@ -102,26 +102,26 @@
 
   function setPageTitle(song) {
     if (song) {
-      pageTitleEl.textContent = hu.songLabel(song.title);
+      pageTitleEl.textContent = copy.songLabel(song.title);
     } else {
-      pageTitleEl.textContent = hu.baseTitle;
+      pageTitleEl.textContent = copy.baseTitle;
     }
   }
 
   function renderExternalUrlIframe(url) {
     setPageTitle(null);
-    pageTitleEl.textContent = hu.webTitle;
+    pageTitleEl.textContent = copy.webTitle;
     clearStatus();
     contentEl.className = "viewer-external";
     contentEl.innerHTML = `<iframe
       class="viewer-iframe"
       src="${escapeHtml(url)}"
-      title="${escapeHtml(hu.iframeTitle)}"
+      title="${escapeHtml(copy.iframeTitle)}"
       referrerpolicy="no-referrer-when-downgrade"
     ></iframe>
     <p class="viewer-external-fallback">
-      ${escapeHtml(hu.iframeNotShowing)}
-      <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(hu.openInBrowser)}</a>
+      ${escapeHtml(copy.iframeNotShowing)}
+      <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(copy.openInBrowser)}</a>
     </p>`;
   }
 
@@ -175,12 +175,12 @@
     }
 
     if (lyricsTabOpened) {
-      hintEl.textContent = hu.lyricsTabOpen;
+      hintEl.textContent = copy.lyricsTabOpen;
       openBtn.classList.add("hidden");
       return;
     }
 
-    hintEl.textContent = hu.allowPopups;
+    hintEl.textContent = copy.allowPopups;
     openBtn.classList.remove("hidden");
   }
 
@@ -198,16 +198,16 @@
 
   function renderExternalUrlOpen(url, lyricsTabOpened) {
     setPageTitle(null);
-    pageTitleEl.textContent = hu.webTitle;
+    pageTitleEl.textContent = copy.webTitle;
     clearStatus();
     contentEl.className = "viewer-external-redirect";
 
-    const hint = lyricsTabOpened ? hu.lyricsTabOpen : hu.openingLyricsTab;
+    const hint = lyricsTabOpened ? copy.lyricsTabOpen : copy.openingLyricsTab;
 
     const buttonClass = lyricsTabOpened ? "btn viewer-redirect-btn hidden" : "btn viewer-redirect-btn";
 
-    contentEl.innerHTML = `<p class="viewer-redirect-message">${escapeHtml(hu.externalWebsite)}</p>
-    <button type="button" class="${buttonClass}" id="open-lyrics-btn">${escapeHtml(hu.openLyrics)}</button>
+    contentEl.innerHTML = `<p class="viewer-redirect-message">${escapeHtml(copy.externalWebsite)}</p>
+    <button type="button" class="${buttonClass}" id="open-lyrics-btn">${escapeHtml(copy.openLyrics)}</button>
     <p class="viewer-external-fallback" id="open-lyrics-hint">${escapeHtml(hint)}</p>`;
 
     wireOpenLyricsButton(url);
@@ -227,10 +227,10 @@
       document.body.classList.remove("song-active");
       setPageTitle(null);
       contentEl.className = "viewer-empty";
-      contentEl.innerHTML = `<p>${escapeHtml(hu.waitingForOperator)}</p>`;
-      statusText.textContent = hu.noSongSelected;
+      contentEl.innerHTML = `<p>${escapeHtml(copy.waitingForOperator)}</p>`;
+      statusText.textContent = copy.noSongSelected;
       statusText.classList.remove("hidden");
-      setStatus("", hu.waitingForSong);
+      setStatus("", copy.waitingForSong);
       return;
     }
 
@@ -238,8 +238,8 @@
       document.body.classList.remove("song-active");
       setPageTitle(song);
       contentEl.className = "viewer-empty";
-      contentEl.innerHTML = `<p>${escapeHtml(hu.noPageImages)}</p>`;
-      setStatus("error", hu.missingSongImages);
+      contentEl.innerHTML = `<p>${escapeHtml(copy.noPageImages)}</p>`;
+      setStatus("error", copy.missingSongImages);
       statusText.textContent = `${song.number}. ${song.title}`;
       statusText.classList.remove("hidden");
       return;
@@ -252,7 +252,7 @@
       .map(
         (page, index) =>
           `<img class="viewer-page-image" src="${escapeHtml(page)}" alt="${escapeHtml(
-            hu.pageAlt(song.title, index + 1)
+            copy.pageAlt(song.title, index + 1)
           )}" loading="eager" />`
       )
       .join("");
@@ -307,7 +307,7 @@
 
     const song = window.SongtextSongs.findByNumber(songs, number);
     if (!song) {
-      setStatus("error", hu.songNotInCatalogue(number));
+      setStatus("error", copy.songNotInCatalogue(number));
       return;
     }
 
@@ -338,7 +338,7 @@
         renderSong(null);
       }
     } catch (err) {
-      setStatus("error", err.message || hu.syncError);
+      setStatus("error", err.message || copy.syncError);
     }
   }
 
@@ -356,8 +356,8 @@
 
       songs = await window.SongtextSongs.loadCatalogue();
       if (!window.SongtextSync.isConfigured()) {
-        setStatus("error", hu.firebaseNotConfigured);
-        statusText.textContent = hu.setupRequired;
+        setStatus("error", copy.firebaseNotConfigured);
+        statusText.textContent = copy.setupRequired;
         return;
       }
 
@@ -366,9 +366,9 @@
 
       pollTimer = window.setInterval(pollCurrentDisplay, config.pollIntervalMs);
     } catch (err) {
-      setStatus("error", err.message || hu.failedToStartViewer);
+      setStatus("error", err.message || copy.failedToStartViewer);
       contentEl.className = "viewer-empty";
-      contentEl.innerHTML = `<p>${escapeHtml(err.message || hu.failedToStart)}</p>`;
+      contentEl.innerHTML = `<p>${escapeHtml(err.message || copy.failedToStart)}</p>`;
     }
   }
 

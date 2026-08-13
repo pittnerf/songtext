@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dalszöveg megjelenítő</title>
+    <title>Lyrics viewer</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page viewer-page">
@@ -17,26 +17,26 @@
       }
     </script>
     <header class="page-header">
-      <h1 id="page-title">Most ezt énekeljük</h1>
-      <p id="status-text" class="hidden">Kapcsolódás…</p>
+      <h1 id="page-title">Now singing</h1>
+      <p id="status-text" class="hidden">Connecting…</p>
     </header>
 
     <main class="page-main">
       <div class="status-bar" aria-live="polite">
         <span class="status-dot" id="status-dot"></span>
-        <span id="sync-status">Várakozás a dal kiválasztására</span>
+        <span id="sync-status">Waiting for a song to be selected</span>
       </div>
 
       <div id="song-content" class="viewer-empty">
-        <p>Várakozás, amíg a kezelő kiválaszt egy dalt…</p>
+        <p>Waiting for the operator to select a song…</p>
       </div>
 
       <footer class="viewer-qr-footer">
-        <p class="viewer-qr-label">Oszd meg másokkal — olvasd be a QR kódot</p>
+        <p class="viewer-qr-label">Share with others — scan the QR code</p>
         <img
           id="viewer-qr"
           class="viewer-qr-image"
-          alt="QR kód a dalok oldalához"
+          alt="QR code for the lyrics page"
         />
       </footer>
     </main>

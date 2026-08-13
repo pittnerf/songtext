@@ -67,14 +67,22 @@ songs_pdfs/
 
 ### 2. Build the song catalogue
 
-From the repo root:
+**Windows (no Python):** put `build_songs.exe` in this folder (or in `dist\`), then from PowerShell:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\Build-Songs.ps1
+```
+
+You can also run `.\build_songs.exe` directly. Download the exe from the **Build Windows exe** GitHub Action artifact, or build it on a Windows machine with `scripts\package_windows.ps1` (see [Windows packaging](#windows-packaging-no-python) below).
+
+**Linux / macOS / any machine with Python:**
 
 ```bash
 # from this repo's root
 python3 scripts/build_songs.py
 ```
 
-This writes `9_songtext/public/data/songs.json` and renders each PDF page to a JPEG in `public/data/images/`, preserving the original layout (chords, spacing, etc.).
+This writes `public/data/songs.json` and renders each PDF page to a JPEG in `public/data/images/`, preserving the original layout (chords, spacing, etc.).
 
 ### 3. Configure Firebase
 
@@ -158,14 +166,46 @@ This folder is meant to live in **its own Git repository**, not inside the cours
 
 ```bash
 python3 scripts/build_songs.py
+# Windows: powershell -ExecutionPolicy Bypass -File .\Build-Songs.ps1
 git add public/data/
 git commit -m "Rebuild song images"
 git push
 ```
 
+## Windows packaging (no Python)
+
+Third-party Windows users do not need Python. The catalogue builder is packaged as a single `build_songs.exe` (PyInstaller + PyMuPDF).
+
+### For the people who only rebuild songs
+
+1. Give them this project folder plus `build_songs.exe` (same folder as `Build-Songs.ps1`, or in `dist\`).
+2. They add PDFs to `songs_pdfs\` and run:
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File .\Build-Songs.ps1
+   ```
+
+### How to create `build_songs.exe`
+
+**Option A — GitHub Actions (recommended from Linux/WSL)**
+
+1. Push these packaging files to GitHub.
+2. Open **Actions → Build Windows exe** and run the workflow (or wait for it on `main`).
+3. Download the `build_songs-windows` artifact and copy `build_songs.exe` into the project folder.
+
+**Option B — Build on a Windows machine**
+
+Python is needed only on the machine that *creates* the exe:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\package_windows.ps1
+```
+
+That writes `dist\build_songs.exe` and a copy at the project root.
+
 ## Concert day checklist
 
-1. Re-run `build_songs.py` if PDFs changed, then redeploy.
+1. Re-run `Build-Songs.ps1` (Windows) or `build_songs.py` if PDFs changed, then redeploy.
 2. Open **controller.html** on the operator device.
 3. Print or display **qr.html** for the audience.
 4. Select song 1 before the concert starts so phones are not blank.
@@ -176,7 +216,10 @@ git push
 9_songtext/
   doc/concept.txt          # original idea
   songs_pdfs/              # source PDFs (you add these)
+  Build-Songs.ps1          # Windows: run the packaged .exe
+  build_songs.exe          # Windows build output (not committed)
   scripts/build_songs.py   # PDF → songs.json
+  scripts/package_windows.ps1  # rebuild the .exe on Windows
   public/
     index.html
     viewer.html
@@ -206,5 +249,7 @@ git push
 | Viewer stuck on “Waiting…” | Open controller and select a song; check Firebase config |
 | “Firebase is not configured” | Fill in `public/js/config.js` |
 | Wrong song order | Rename PDFs with numeric prefixes and rebuild |
-| Blurry text on phones | Rebuild with higher scale: `python3 scripts/build_songs.py --scale 2.5` |
+| Blurry text on phones | Rebuild with higher scale: `python3 scripts/build_songs.py --scale 2.5` (Windows: `.\Build-Songs.ps1 --scale 2.5`) |
 | Large deploy size | Lower JPEG quality: `--jpeg-quality 80`, or use `--scale 1.75` |
+| `build_songs.exe` blocked by Defender | Unsigned PyInstaller binaries are often flagged. Allow the file, or rebuild it yourself with `scripts\package_windows.ps1` |
+| PowerShell says scripts are disabled | `powershell -ExecutionPolicy Bypass -File .\Build-Songs.ps1` |

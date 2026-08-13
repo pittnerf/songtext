@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 .venv/
 
+# PyInstaller
+build/
+dist/
+build_songs.exe
+
 # Optional: keep source PDFs out of git (keep them locally for rebuilds)
 # songs_pdfs/*.pdf
 

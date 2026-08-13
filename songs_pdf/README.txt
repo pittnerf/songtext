@@ -11,4 +11,7 @@ The leading number becomes the song number shown in the controller.
 The rest of the filename becomes the song title.
 
 Then run from the repo root:
-  python3 9_songtext/scripts/build_songs.py
+  python3 scripts/build_songs.py
+
+Windows (no Python), after placing build_songs.exe in the project folder:
+  powershell -ExecutionPolicy Bypass -File .\Build-Songs.ps1

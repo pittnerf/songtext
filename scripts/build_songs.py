@@ -7,16 +7,43 @@ import argparse
 import json
 import re
 import shutil
+import sys
 from pathlib import Path
 
-import fitz
+try:
+    import pymupdf as fitz
+except ImportError:  # older PyMuPDF
+    import fitz
 
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_PDF_DIR = ROOT / "songs_pdfs"
-FALLBACK_PDF_DIR = ROOT / "songs_pdf"
-DEFAULT_OUTPUT = ROOT / "public" / "data" / "songs.json"
-DEFAULT_IMAGES_DIR = ROOT / "public" / "data" / "images"
+def app_root() -> Path:
+    """Repo root when run as a script, or the folder that contains the .exe."""
+    if getattr(sys, "frozen", False):
+        start = Path(sys.executable).resolve().parent
+    else:
+        start = Path(__file__).resolve().parent
+
+    for candidate in [start, *start.parents[:3]]:
+        if (candidate / "public").is_dir() or (candidate / "songs_pdfs").is_dir() or (
+            candidate / "songs_pdf"
+        ).is_dir():
+            return candidate
+
+    if getattr(sys, "frozen", False):
+        return start
+    return Path(__file__).resolve().parents[1]
+
+
+def configure_stdio() -> None:
+    if sys.platform != "win32":
+        return
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            try:
+                reconfigure(encoding="utf-8")
+            except Exception:
+                pass
 
 
 def title_from_filename(path: Path) -> str:
@@ -61,12 +88,14 @@ def find_pdfs(pdf_dir: Path) -> list[Path]:
     return sorted(set(pdfs))
 
 
-def resolve_pdf_dir(explicit: Path | None) -> Path:
+def resolve_pdf_dir(root: Path, explicit: Path | None) -> Path:
     if explicit is not None:
         return explicit
-    if DEFAULT_PDF_DIR.is_dir() and find_pdfs(DEFAULT_PDF_DIR):
-        return DEFAULT_PDF_DIR
-    return FALLBACK_PDF_DIR
+    preferred = root / "songs_pdfs"
+    fallback = root / "songs_pdf"
+    if preferred.is_dir() and find_pdfs(preferred):
+        return preferred
+    return fallback
 
 
 def build_catalogue(
@@ -81,8 +110,8 @@ def build_catalogue(
         raise SystemExit(
             f"No PDF files found in {pdf_dir}\n\n"
             "Add your song PDFs to one of these folders:\n"
-            f"  {DEFAULT_PDF_DIR}\n"
-            f"  {FALLBACK_PDF_DIR}\n\n"
+            f"  {pdf_dir.parent / 'songs_pdfs'}\n"
+            f"  {pdf_dir.parent / 'songs_pdf'}\n\n"
             "Use a leading number in each filename, for example:\n"
             "  01_amazing_grace.pdf\n"
             "  02_silent_night.pdf\n"
@@ -126,15 +155,22 @@ def build_catalogue(
 
 
 def main() -> None:
+    configure_stdio()
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--root",
+        type=Path,
+        default=None,
+        help="Project folder containing songs_pdfs/ and public/ (default: auto-detect)",
+    )
     parser.add_argument(
         "--pdf-dir",
         type=Path,
         default=None,
-        help=f"Folder with song PDFs (default: {DEFAULT_PDF_DIR.name} or {FALLBACK_PDF_DIR.name})",
+        help="Folder with song PDFs (default: songs_pdfs or songs_pdf under the project folder)",
     )
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--images-dir", type=Path, default=DEFAULT_IMAGES_DIR)
+    parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument("--images-dir", type=Path, default=None)
     parser.add_argument(
         "--scale",
         type=float,
@@ -149,18 +185,22 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    pdf_dir = resolve_pdf_dir(args.pdf_dir)
-    print(f"Rendering PDFs from {pdf_dir} …")
+    root = args.root.resolve() if args.root is not None else app_root()
+    pdf_dir = resolve_pdf_dir(root, args.pdf_dir)
+    output = args.output if args.output is not None else root / "public" / "data" / "songs.json"
+    images_dir = args.images_dir if args.images_dir is not None else root / "public" / "data" / "images"
+
+    print(f"Rendering PDFs from {pdf_dir} ...")
     songs = build_catalogue(
         pdf_dir,
-        args.images_dir,
+        images_dir,
         scale=args.scale,
         jpeg_quality=args.jpeg_quality,
     )
-    args.output.parent.mkdir(parents=True, exist_ok=True)
+    output.parent.mkdir(parents=True, exist_ok=True)
     payload = {"songs": songs}
-    args.output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Wrote {len(songs)} songs to {args.output}")
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {len(songs)} songs to {output}")
 
 
 if __name__ == "__main__":
