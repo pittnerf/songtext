@@ -14,3 +14,7 @@ build_songs.exe
 # OS / editor
 .DS_Store
 .vscode/
+
+# Real Firebase values — never commit this file.
+# Copy public/js/config.example.js to config.js for local testing only.
+public/js/config.js

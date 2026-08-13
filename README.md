@@ -90,7 +90,23 @@ This writes `public/data/songs.json` and renders each PDF page to a JPEG in `pub
 2. **Build → Realtime Database → Create database.**  
    For a small concert you can start in **test mode** (open read/write). Tighten rules afterward if you keep the project.
 3. **Project settings → Your apps → Web** → register an app and copy the config.
-4. Paste the values into `9_songtext/public/js/config.js` (replace the `YOUR_*` placeholders).
+4. Do **not** commit real values in `public/js/config.js`. Store them as GitHub Actions secrets (see below). `config.example.js` is the dummy file in git.
+
+Add these **repository secrets** (Settings → Secrets and variables → Actions):
+
+- `FIREBASE_API_KEY`
+- `FIREBASE_AUTH_DOMAIN`
+- `FIREBASE_DATABASE_URL`
+- `FIREBASE_PROJECT_ID`
+- `FIREBASE_STORAGE_BUCKET`
+- `FIREBASE_MESSAGING_SENDER_ID`
+- `FIREBASE_APP_ID`
+
+Optional: `FIREBASE_STATE_PATH` (default `songtext/currentSongNumber`).
+
+The Pages workflow writes `public/js/config.js` at deploy time. That file is gitignored.
+
+For local testing only: copy `public/js/config.example.js` to `public/js/config.js` on your machine (it will not be uploaded).
 
 Example database rules for a concert (Realtime Database → Rules):
 
